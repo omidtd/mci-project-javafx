@@ -1,0 +1,2 @@
+May 31, 2026 7:29:08 AM com.example.javafxtest2.model.FileLoggerObserver onTransactionRegistered
+INFO: Timestamp: 2026-05-31T07:29:08.881434659 | TxID: 66fa3be7 | Type: WITHDRAWAL | Amount: 100 | Src: f6b8ca7e | Dest: N/A | Status: SUCCESS | Description: Withdrawal of 100 from account f6b8ca7e
