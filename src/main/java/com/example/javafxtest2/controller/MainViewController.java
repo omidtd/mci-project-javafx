@@ -20,6 +20,10 @@ public class MainViewController {
         stage.setScene(new Scene(new OpenAccountView(stage, mainScene), 400, 450));
     }
 
+    public void navigateToShowBalance(Scene mainScene) {
+        stage.setScene(new Scene(new BalanceView(stage, mainScene), 400, 450));
+    }
+
     public void navigateToDeposit(Scene mainScene) {
         stage.setScene(new Scene(new DepositView(stage, mainScene), 400, 450));
     }

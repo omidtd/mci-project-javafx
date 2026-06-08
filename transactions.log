@@ -1,2 +1,10 @@
 May 31, 2026 7:29:08 AM com.example.javafxtest2.model.FileLoggerObserver onTransactionRegistered
 INFO: Timestamp: 2026-05-31T07:29:08.881434659 | TxID: 66fa3be7 | Type: WITHDRAWAL | Amount: 100 | Src: f6b8ca7e | Dest: N/A | Status: SUCCESS | Description: Withdrawal of 100 from account f6b8ca7e
+Jun 08, 2026 10:41:13 AM com.example.javafxtest2.model.FileLoggerObserver onTransactionRegistered
+INFO: Timestamp: 2026-06-08T10:41:13.484779293 | TxID: a13f2ea4 | Type: DEPOSIT | Amount: 10 | Src: N/A | Dest: f84b5024 | Status: SUCCESS | Description: Deposit of 10 to account f84b5024
+Jun 08, 2026 10:42:08 AM com.example.javafxtest2.model.FileLoggerObserver onTransactionRegistered
+INFO: Timestamp: 2026-06-08T10:42:08.555549307 | TxID: c3491793 | Type: WITHDRAWAL | Amount: 10 | Src: f84b5024 | Dest: N/A | Status: SUCCESS | Description: Withdrawal of 10 from account f84b5024
+Jun 08, 2026 10:42:18 AM com.example.javafxtest2.model.FileLoggerObserver onTransactionRegistered
+WARNING: Timestamp: 2026-06-08T10:42:18.828862413 | TxID: 8b094d14 | Type: TRANSFER | Amount: 23 | Src: f84b5024 | Dest: fdffe | Status: FAILED | Description: FAILED: Account with number fdffe not found
+Jun 08, 2026 11:18:25 AM com.example.javafxtest2.model.FileLoggerObserver onTransactionRegistered
+INFO: Timestamp: 2026-06-08T11:18:25.616684146 | TxID: 187464e8 | Type: DEPOSIT | Amount: 1212 | Src: N/A | Dest: 8de80703 | Status: SUCCESS | Description: Deposit of 1212 to account 8de80703

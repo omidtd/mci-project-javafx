@@ -70,5 +70,12 @@ public class ConcurrencyTest {
         } else {
             System.out.println("TEST FAILED: Race Condition Detected! Data is corrupted.");
         }
+
+        try (java.io.ObjectOutputStream oos = new java.io.ObjectOutputStream(new java.io.FileOutputStream("bank_data.ser"))) {
+            oos.writeObject(Bank.getInstance());
+            System.out.println("Test state successfully saved to disk for UI application!");
+        } catch (Exception e) {
+            System.err.println("Failed to save test state: " + e.getMessage());
+        }
     }
 }

@@ -27,6 +27,7 @@ public class MainView extends VBox {
 
         Button btnCreateCustomer = new Button("Create Customer");
         Button btnOpenAccount = new Button("Open Account");
+        Button btnShowBalance = new Button("show balance");
         Button btnDeposit = new Button("Deposit");
         Button btnWithdraw = new Button("Withdraw");
         Button btnTransfer = new Button("Transfer");
@@ -36,6 +37,7 @@ public class MainView extends VBox {
         double buttonWidth = 220;
         btnCreateCustomer.setPrefWidth(buttonWidth);
         btnOpenAccount.setPrefWidth(buttonWidth);
+        btnShowBalance.setPrefWidth(buttonWidth);
         btnDeposit.setPrefWidth(buttonWidth);
         btnWithdraw.setPrefWidth(buttonWidth);
         btnTransfer.setPrefWidth(buttonWidth);
@@ -44,6 +46,7 @@ public class MainView extends VBox {
 
         String buttonStyle = "-fx-font-size: 14px; -fx-padding: 8px;";
         btnCreateCustomer.setStyle(buttonStyle);
+        btnShowBalance.setStyle(buttonStyle);
         btnOpenAccount.setStyle(buttonStyle);
         btnDeposit.setStyle(buttonStyle);
         btnWithdraw.setStyle(buttonStyle);
@@ -53,6 +56,7 @@ public class MainView extends VBox {
 
         btnCreateCustomer.setOnAction(e -> controller.navigateToCreateCustomer(mainScene));
         btnOpenAccount.setOnAction(e -> controller.navigateToOpenAccount(mainScene));
+        btnShowBalance.setOnAction(e->controller.navigateToShowBalance(mainScene));
         btnDeposit.setOnAction(e -> controller.navigateToDeposit(mainScene));
         btnWithdraw.setOnAction(e -> controller.navigateToWithdraw(mainScene));
         btnTransfer.setOnAction(e -> controller.navigateToTransfer(mainScene));
@@ -63,6 +67,7 @@ public class MainView extends VBox {
                 lblTitle,
                 btnCreateCustomer,
                 btnOpenAccount,
+                btnShowBalance,
                 btnDeposit,
                 btnWithdraw,
                 btnTransfer,
