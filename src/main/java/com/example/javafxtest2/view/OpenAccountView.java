@@ -82,6 +82,9 @@ public class OpenAccountView extends VBox {
 
         btnBack.setOnAction(e -> stage.setScene(mainScene));
 
-        getChildren().addAll(lblHeader, txtNationalId, txtInitialBalance, txtParam, btnSavings, btnChecking, lblMessage, btnBack);
+
+        getChildren().addAll(lblHeader, txtNationalId,
+                txtInitialBalance, txtParam, btnSavings, btnChecking, lblMessage,
+                btnBack);
     }
 }

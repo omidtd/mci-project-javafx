@@ -24,7 +24,7 @@ public class OpenAccountController {
         try {
             Customer owner = Bank.getInstance().getCustomer(nationalId.trim());
 
-            String accountNumber = UUID.randomUUID().toString().substring(0, 8);
+            String accountNumber = UUID.randomUUID().toString().substring(0, 4);
             BigDecimal initialBalance = new BigDecimal(initialBalanceStr.trim());
             BigDecimal interestRate = new BigDecimal(interestRateStr.trim());
 

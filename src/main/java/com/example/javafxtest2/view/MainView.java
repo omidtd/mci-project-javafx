@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -13,6 +14,7 @@ public class MainView extends VBox {
 
     private final MainViewController controller;
     private Scene mainScene;
+    private final Label lblDate;
 
     public MainView(Stage stage) {
         this.controller = new MainViewController(stage);
@@ -21,6 +23,22 @@ public class MainView extends VBox {
         setAlignment(Pos.CENTER);
         setPadding(new Insets(25));
         setStyle("-fx-background-color: #f4f4f4;");
+
+        HBox dateContainer = new HBox(10);
+        dateContainer.setAlignment(Pos.CENTER);
+
+        lblDate = new Label("Date: " + controller.getCurrentDateString());
+        lblDate.setStyle("-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #555555;");
+
+        Button btnNextDay = new Button("▶ Next Day");
+        btnNextDay.setStyle("-fx-font-size: 12px; -fx-padding: 4px 8px;");
+
+        btnNextDay.setOnAction(e -> {
+            String updatedDate = controller.handleNextDay();
+            lblDate.setText("Date: " + updatedDate);
+        });
+
+        dateContainer.getChildren().addAll(lblDate, btnNextDay);
 
         Label lblTitle = new Label("Bank");
         lblTitle.setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333333;");
@@ -56,7 +74,7 @@ public class MainView extends VBox {
 
         btnCreateCustomer.setOnAction(e -> controller.navigateToCreateCustomer(mainScene));
         btnOpenAccount.setOnAction(e -> controller.navigateToOpenAccount(mainScene));
-        btnShowBalance.setOnAction(e->controller.navigateToShowBalance(mainScene));
+        btnShowBalance.setOnAction(e -> controller.navigateToShowBalance(mainScene));
         btnDeposit.setOnAction(e -> controller.navigateToDeposit(mainScene));
         btnWithdraw.setOnAction(e -> controller.navigateToWithdraw(mainScene));
         btnTransfer.setOnAction(e -> controller.navigateToTransfer(mainScene));
@@ -64,6 +82,7 @@ public class MainView extends VBox {
         btnDatabase.setOnAction(e -> controller.navigateToDatabase(mainScene));
 
         getChildren().addAll(
+                dateContainer,
                 lblTitle,
                 btnCreateCustomer,
                 btnOpenAccount,
@@ -77,7 +96,7 @@ public class MainView extends VBox {
     }
 
     public Scene createAndGetScene() {
-        this.mainScene = new Scene(this, 400, 450);
+        this.mainScene = new Scene(this, 400, 520);
         return this.mainScene;
     }
 }
