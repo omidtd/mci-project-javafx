@@ -72,6 +72,10 @@ public class AtmSimulation implements Runnable {
                 "Automated transaction by " + atmId,
                 LocalDateTime.now()
         );
-        System.out.println("[" + atmId + "] " + type + " | Amount: " + amount + " | Tx: " + txId + " | Status: SUCCESS");
+
+        String srcInfo = (src != null) ? " | Src: " + src : "";
+        String destInfo = (dest != null) ? " | Dest: " + dest : "";
+
+        System.out.println("[" + atmId + "] " + type + " | Amount: " + amount + srcInfo + destInfo + " | Tx: " + txId + " | Status: SUCCESS");
     }
 }
